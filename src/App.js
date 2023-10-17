@@ -38,6 +38,7 @@ function Main() {
                 )}
                 {myBooksIsActive && <Button>My Books</Button>}
             </div>
+            <Form />
         </div>
     );
 }
@@ -53,6 +54,19 @@ function Quote() {
 
 function Button({ onClick, children }) {
     return <button onClick={onClick}>{children}</button>;
+}
+
+function Form() {
+    return (
+        <form>
+            <input placeholder="E.g. 1984"></input>
+            <input placeholder="E.g. George Orwell"></input>
+            <input placeholder="E.g. Dystopian"></input>
+            <input placeholder="E.g. 328"></input>
+            <input placeholder="What's the book about?"></input>
+            <input placeholder="Upload"></input>
+        </form>
+    );
 }
 
 export default App;
