@@ -70,7 +70,7 @@ function Form() {
                 <input placeholder="What's the book about?"></input>
                 <input placeholder="Upload"></input>
             </form>
-            <Button>Add</Button>
+            <Button>Add Book</Button>
         </div>
     );
 }
