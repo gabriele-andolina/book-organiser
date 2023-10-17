@@ -21,6 +21,7 @@ function Main() {
     return (
         <div className="main-page">
             <Quote />
+            <Button />
         </div>
     );
 }
@@ -32,6 +33,10 @@ function Quote() {
             <p className="quote-par">C. S. Lewis</p>
         </div>
     );
+}
+
+function Button() {
+    return <button>Add</button>;
 }
 
 export default App;
