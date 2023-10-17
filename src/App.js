@@ -1,7 +1,15 @@
 import "./style.css";
 
 function App() {
-    return <h1>Hello, React!</h1>;
+    return <Header />;
+}
+
+function Header() {
+    return (
+        <div className="page-title">
+            <h1>Books for a Lifetime</h1>
+        </div>
+    );
 }
 
 export default App;
