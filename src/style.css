@@ -42,3 +42,24 @@ body {
 .quote-par {
     margin-top: 0;
 }
+
+button {
+    background-color: #363062;
+    color: #f99417;
+    width: 10rem;
+    height: 3rem;
+    padding: 1rem;
+    border: none;
+    box-shadow: 0px 3px 3px 0 #f99417;
+    font-family: "Brygada 1918";
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+button:hover {
+    /* width: 11rem;
+    height: 4rem; */
+    background-color: #f99417;
+    color: #363062;
+    box-shadow: 0px 3px 3px 0 #363062;
+}
