@@ -22,11 +22,13 @@ function Main() {
     const [quoteIsActive, setQuoteIsActive] = useState(true);
     const [addBooksIsActive, setAddBooksIsActive] = useState(true);
     const [myBooksIsActive, setMyBooksIsActive] = useState(true);
+    const [formIsActive, setFormIsActive] = useState(false);
 
     function handleAddBooks() {
         setQuoteIsActive(false);
         setAddBooksIsActive(false);
         setMyBooksIsActive(false);
+        setFormIsActive(true);
     }
 
     return (
@@ -38,7 +40,7 @@ function Main() {
                 )}
                 {myBooksIsActive && <Button>My Books</Button>}
             </div>
-            <Form />
+            {formIsActive && <Form />}
         </div>
     );
 }
@@ -58,14 +60,17 @@ function Button({ onClick, children }) {
 
 function Form() {
     return (
-        <form>
-            <input placeholder="E.g. 1984"></input>
-            <input placeholder="E.g. George Orwell"></input>
-            <input placeholder="E.g. Dystopian"></input>
-            <input placeholder="E.g. 328"></input>
-            <input placeholder="What's the book about?"></input>
-            <input placeholder="Upload"></input>
-        </form>
+        <div className="add-book-section">
+            <h2 className="title">Let's add a new book!</h2>
+            <form className="add-book-form">
+                <input placeholder="E.g. 1984"></input>
+                <input placeholder="E.g. George Orwell"></input>
+                <input placeholder="E.g. Dystopian"></input>
+                <input placeholder="E.g. 328"></input>
+                <input placeholder="What's the book about?"></input>
+                <input placeholder="Upload"></input>
+            </form>
+        </div>
     );
 }
 
