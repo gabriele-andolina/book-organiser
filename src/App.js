@@ -20,14 +20,14 @@ function Header() {
 
 function Main() {
     const [quoteIsActive, setQuoteIsActive] = useState(true);
-    const [addBooksIsActive, setAddBooksIsActive] = useState(true);
-    const [myBooksIsActive, setMyBooksIsActive] = useState(true);
+    const [addBooksBtnIsActive, setAddBooksBtnIsActive] = useState(true);
+    const [myBooksBtnIsActive, setMyBooksBtnIsActive] = useState(true);
     const [formIsActive, setFormIsActive] = useState(false);
 
     function handleAddBooks() {
         setQuoteIsActive(false);
-        setAddBooksIsActive(false);
-        setMyBooksIsActive(false);
+        setAddBooksBtnIsActive(false);
+        setMyBooksBtnIsActive(false);
         setFormIsActive(true);
     }
 
@@ -35,11 +35,12 @@ function Main() {
         <div className="main-page">
             {quoteIsActive && <Quote />}
             <div className="main-page-btns">
-                {addBooksIsActive && (
+                {addBooksBtnIsActive && (
                     <Button onClick={handleAddBooks}>Add a book</Button>
                 )}
-                {myBooksIsActive && <Button>My Books</Button>}
+                {myBooksBtnIsActive && <Button>My Books</Button>}
             </div>
+            {/* <MyBooks /> */}
             {formIsActive && <Form />}
         </div>
     );
@@ -73,6 +74,10 @@ function Form() {
             <Button>Add Book</Button>
         </div>
     );
+}
+
+function MyBooks() {
+    return <div className="my-books"></div>;
 }
 
 export default App;

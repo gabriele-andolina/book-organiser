@@ -11,7 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Brygada 1918", "Times New Roman", sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-style: italic;
     background-color: #f99417;
     width: 100vw;
 }
@@ -102,4 +103,12 @@ input:focus {
     box-shadow: 0px 3px 3px 0 #f99417;
     width: 21rem;
     height: 3rem;
+}
+
+.my-books {
+    /* display: flex;
+    justify-content: left; */
+    width: 30vw;
+    height: 100vh;
+    background-color: #363062;
 }
