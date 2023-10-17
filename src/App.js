@@ -21,7 +21,10 @@ function Main() {
     return (
         <div className="main-page">
             <Quote />
-            <Button />
+            <div className="main-page-btns">
+                <Button>Add a book</Button>
+                <Button>My Books</Button>
+            </div>
         </div>
     );
 }
@@ -35,8 +38,8 @@ function Quote() {
     );
 }
 
-function Button() {
-    return <button>Add</button>;
+function Button({ children }) {
+    return <button>{children}</button>;
 }
 
 export default App;
