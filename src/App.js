@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./style.css";
 
 function App() {
@@ -18,12 +19,24 @@ function Header() {
 }
 
 function Main() {
+    const [quoteIsActive, setQuoteIsActive] = useState(true);
+    const [addBooksIsActive, setAddBooksIsActive] = useState(true);
+    const [myBooksIsActive, setMyBooksIsActive] = useState(true);
+
+    function handleAddBooks() {
+        setQuoteIsActive(false);
+        setAddBooksIsActive(false);
+        setMyBooksIsActive(false);
+    }
+
     return (
         <div className="main-page">
-            <Quote />
+            {quoteIsActive && <Quote />}
             <div className="main-page-btns">
-                <Button>Add a book</Button>
-                <Button>My Books</Button>
+                {addBooksIsActive && (
+                    <Button onClick={handleAddBooks}>Add a book</Button>
+                )}
+                {myBooksIsActive && <Button>My Books</Button>}
             </div>
         </div>
     );
@@ -38,8 +51,8 @@ function Quote() {
     );
 }
 
-function Button({ children }) {
-    return <button>{children}</button>;
+function Button({ onClick, children }) {
+    return <button onClick={onClick}>{children}</button>;
 }
 
 export default App;
