@@ -3,6 +3,7 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 .page-title {
@@ -13,5 +14,4 @@ body {
     font-size: 2rem;
     background-color: #f99417;
     width: 100vw;
-    height: 14vh;
 }
