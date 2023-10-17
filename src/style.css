@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Tangerine:wght@700&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Brygada 1918", "Times New Roman", sans-serif;
+    font-size: 2rem;
+    background-color: #f99417;
+    width: 100vw;
+    height: 14vh;
+}
