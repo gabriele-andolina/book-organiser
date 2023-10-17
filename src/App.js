@@ -20,7 +20,16 @@ function Header() {
 function Main() {
     return (
         <div className="main-page">
-            <h2>I'm the main page</h2>
+            <Quote />
+        </div>
+    );
+}
+
+function Quote() {
+    return (
+        <div className="quote-div">
+            <h2 className="quote">We read to know we're not alone.</h2>
+            <p className="quote-par">C. S. Lewis</p>
         </div>
     );
 }
