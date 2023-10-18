@@ -62,16 +62,43 @@ function Button({ onClick, children }) {
 }
 
 function Form() {
+    function handleInput(e) {
+        console.log(e.target.value);
+    }
+
     return (
         <div className="add-book-section">
             <h2 className="title">Let's add a new book!</h2>
             <form className="add-book-form">
-                <input placeholder="E.g. 1984"></input>
-                <input placeholder="E.g. George Orwell"></input>
-                <input placeholder="E.g. Dystopian"></input>
-                <input placeholder="E.g. 328"></input>
-                <input placeholder="What's the book about?"></input>
-                <input placeholder="Upload"></input>
+                <label htmlFor="title">Title</label>
+                <input
+                    id="title"
+                    name="title"
+                    placeholder="E.g. 1984"
+                    onChange={(e) => handleInput(e)}
+                ></input>
+                <label htmlFor="author">Author</label>
+                <input
+                    id="author"
+                    name="author"
+                    placeholder="E.g. George Orwell"
+                ></input>
+                <label htmlFor="genre">Genre</label>
+                <input
+                    id="genre"
+                    name="genre"
+                    placeholder="E.g. Dystopian"
+                ></input>
+                <label htmlFor="pages">Pages (no.)</label>
+                <input id="pages" name="pages" placeholder="E.g. 328"></input>
+                <label htmlFor="synopsis">Synopsis</label>
+                <input
+                    id="synopsis"
+                    name="synopsis"
+                    placeholder="What's the book about?"
+                ></input>
+                <label htmlFor="cover">Cover</label>
+                <input id="cover" name="cover" placeholder="Upload"></input>
             </form>
             <Button>Add Book</Button>
         </div>

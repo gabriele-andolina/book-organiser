@@ -95,6 +95,13 @@ button:hover {
     font-size: 3rem;
 }
 
+label {
+    font-family: "Brygada 1918";
+    font-size: 0.8rem;
+    color: #f5f5f5;
+    margin-bottom: 0.4rem;
+}
+
 input {
     width: 20rem;
     height: 2rem;
