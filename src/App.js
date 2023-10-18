@@ -23,12 +23,14 @@ function Main() {
     const [addBooksBtnIsActive, setAddBooksBtnIsActive] = useState(true);
     const [myBooksBtnIsActive, setMyBooksBtnIsActive] = useState(true);
     const [formIsActive, setFormIsActive] = useState(false);
+    const [myBooksColumn, setMyBooksColumn] = useState(false);
 
     function handleAddBooks() {
         setQuoteIsActive(false);
         setAddBooksBtnIsActive(false);
         setMyBooksBtnIsActive(false);
         setFormIsActive(true);
+        setMyBooksColumn(true);
     }
 
     return (
@@ -40,7 +42,7 @@ function Main() {
                 )}
                 {myBooksBtnIsActive && <Button>My Books</Button>}
             </div>
-            <MyBooks />
+            {myBooksColumn && <MyBooks />}
             {formIsActive && <Form />}
         </div>
     );
