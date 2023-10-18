@@ -13,7 +13,7 @@ function App() {
 function Header() {
     return (
         <div className="page-title">
-            <h1>Books for a Lifetime</h1>
+            <h1>Books of a Lifetime</h1>
         </div>
     );
 }
@@ -40,7 +40,7 @@ function Main() {
                 )}
                 {myBooksBtnIsActive && <Button>My Books</Button>}
             </div>
-            {/* <MyBooks /> */}
+            <MyBooks />
             {formIsActive && <Form />}
         </div>
     );
