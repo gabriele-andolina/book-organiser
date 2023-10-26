@@ -62,43 +62,70 @@ function Button({ onClick, children }) {
 }
 
 function Form() {
-    function handleInput(e) {
-        console.log(e.target.value);
-    }
+    const [title, setTitle] = useState("");
+    const [author, setAuthor] = useState("");
+    const [genre, setGenre] = useState("");
+    const [pagesNumber, setPagesNumber] = useState(0);
+    const [synopsis, setSynopsis] = useState("");
+    const [cover, setCover] = useState(null);
 
     return (
         <div className="add-book-section">
-            <h2 className="title">Let's add a new book!</h2>
+            <h2 className="title">My new book:</h2>
+
             <form className="add-book-form">
                 <label htmlFor="title">Title</label>
                 <input
+                    type="text"
                     id="title"
                     name="title"
+                    value={title}
                     placeholder="E.g. 1984"
-                    onChange={(e) => handleInput(e)}
                 ></input>
+
                 <label htmlFor="author">Author</label>
                 <input
+                    type="text"
                     id="author"
                     name="author"
+                    value={author}
                     placeholder="E.g. George Orwell"
                 ></input>
+
                 <label htmlFor="genre">Genre</label>
                 <input
+                    type="text"
                     id="genre"
                     name="genre"
+                    value={genre}
                     placeholder="E.g. Dystopian"
                 ></input>
+
                 <label htmlFor="pages">Pages (no.)</label>
-                <input id="pages" name="pages" placeholder="E.g. 328"></input>
-                <label htmlFor="synopsis">Synopsis</label>
                 <input
+                    type="number"
+                    id="pages"
+                    name="pages"
+                    value={pagesNumber}
+                    placeholder="E.g. 328"
+                ></input>
+
+                <label htmlFor="synopsis">Synopsis</label>
+                <textarea
                     id="synopsis"
                     name="synopsis"
+                    value={synopsis}
                     placeholder="What's the book about?"
-                ></input>
+                ></textarea>
+
                 <label htmlFor="cover">Cover</label>
-                <input id="cover" name="cover" placeholder="Upload"></input>
+                <input
+                    type="file"
+                    id="cover"
+                    name="cover"
+                    value={cover}
+                    placeholder="Upload"
+                ></input>
             </form>
             <Button>Add Book</Button>
         </div>
