@@ -111,7 +111,7 @@ function Form() {
                     name="pages"
                     value={pagesNumber}
                     placeholder="E.g. 328"
-                    onChange={(e) => setPagesNumber(e.target.value)}
+                    onChange={(e) => setPagesNumber(Number(e.target.value))}
                 ></input>
 
                 <label htmlFor="synopsis">Synopsis</label>
