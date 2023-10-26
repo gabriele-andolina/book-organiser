@@ -81,6 +81,7 @@ function Form() {
                     name="title"
                     value={title}
                     placeholder="E.g. 1984"
+                    onChange={(e) => setTitle(e.target.value)}
                 ></input>
 
                 <label htmlFor="author">Author</label>
@@ -90,6 +91,7 @@ function Form() {
                     name="author"
                     value={author}
                     placeholder="E.g. George Orwell"
+                    onChange={(e) => setAuthor(e.target.value)}
                 ></input>
 
                 <label htmlFor="genre">Genre</label>
@@ -99,6 +101,7 @@ function Form() {
                     name="genre"
                     value={genre}
                     placeholder="E.g. Dystopian"
+                    onChange={(e) => setGenre(e.target.value)}
                 ></input>
 
                 <label htmlFor="pages">Pages (no.)</label>
@@ -108,6 +111,7 @@ function Form() {
                     name="pages"
                     value={pagesNumber}
                     placeholder="E.g. 328"
+                    onChange={(e) => setPagesNumber(e.target.value)}
                 ></input>
 
                 <label htmlFor="synopsis">Synopsis</label>
@@ -116,6 +120,7 @@ function Form() {
                     name="synopsis"
                     value={synopsis}
                     placeholder="What's the book about?"
+                    onChange={(e) => setSynopsis(e.target.value)}
                 ></textarea>
 
                 <label htmlFor="cover">Cover</label>
@@ -125,6 +130,7 @@ function Form() {
                     name="cover"
                     value={cover}
                     placeholder="Upload"
+                    onChange={(e) => setCover(e.target.value)}
                 ></input>
             </form>
             <Button>Add Book</Button>
