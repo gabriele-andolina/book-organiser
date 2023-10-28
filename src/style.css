@@ -134,11 +134,17 @@ textarea:focus {
 }
 
 .my-books {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     left: 0px;
     width: 30vw;
     height: 100vh;
     background-color: #363062;
+}
+
+.my-books li {
+    margin-bottom: 6rem;
 }
 
 .book-item {
@@ -151,9 +157,9 @@ textarea:focus {
     right: 1vw;
     height: 6rem;
     width: 28vw;
-    padding-left: 0.4rem;
     background-color: #f5f5f5;
     border: 2px solid #f99417;
+    padding-left: 0.4rem;
 }
 
 .book-cover-div {

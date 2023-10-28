@@ -50,8 +50,6 @@ function Main() {
     }
 
     function handleAddNewBook(book) {
-        // setAllBooks(...books, book); This is a mistake because 1) I'm not using the current state as the starting point
-        // and 2) I'm not creating a new array with spread.
         setAllBooks((allBooks) => [...allBooks, book]);
     }
 
@@ -90,6 +88,8 @@ function Form({ onAddBook }) {
     function handleSubmit(e) {
         e.preventDefault();
 
+        console.log("Working");
+
         const newBook = {
             title,
             author,
@@ -100,6 +100,14 @@ function Form({ onAddBook }) {
         };
 
         onAddBook(newBook);
+        console.log(newBook);
+
+        setTitle("");
+        setAuthor("");
+        setGenre("");
+        setPagesNumber(0);
+        setSynopsis("");
+        setCover("");
     }
 
     return (
@@ -165,8 +173,8 @@ function Form({ onAddBook }) {
                     placeholder="Upload"
                     onChange={(e) => setCover(e.target.value)}
                 ></input>
+                <Button>Add Book</Button>
             </form>
-            <Button>Add Book</Button>
         </div>
     );
 }
@@ -176,7 +184,9 @@ function MyBooks({ allBooks }) {
         <div className="my-books">
             <ul>
                 {allBooks.map((book) => (
-                    <BookItem title={book.title} author={book.author} />
+                    <li key={book.title}>
+                        <BookItem title={book.title} author={book.author} />
+                    </li>
                 ))}
             </ul>
         </div>
