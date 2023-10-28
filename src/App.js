@@ -1,6 +1,17 @@
 import { useState } from "react";
 import "./style.css";
 
+const books = [
+    {
+        title: "Harry Potter and the Philosopher's Stone",
+        author: "J. K. Rowling",
+        genre: "Fantasy",
+        pagesNumber: 223,
+        synopsis: "The first book in the much-acclaimed young wizard series.",
+        cover: "",
+    },
+];
+
 function App() {
     return (
         <div>
@@ -8,6 +19,10 @@ function App() {
             <Main />
         </div>
     );
+}
+
+function Button({ onClick, children }) {
+    return <button onClick={onClick}>{children}</button>;
 }
 
 function Header() {
@@ -24,6 +39,7 @@ function Main() {
     const [myBooksBtnIsActive, setMyBooksBtnIsActive] = useState(true);
     const [formIsActive, setFormIsActive] = useState(false);
     const [myBooksColumn, setMyBooksColumn] = useState(false);
+    const [allBooks, setAllBooks] = useState(books);
 
     function handleAddBooks() {
         setQuoteIsActive(false);
@@ -31,6 +47,12 @@ function Main() {
         setMyBooksBtnIsActive(false);
         setFormIsActive(true);
         setMyBooksColumn(true);
+    }
+
+    function handleAddNewBook(book) {
+        // setAllBooks(...books, book); This is a mistake because 1) I'm not using the current state as the starting point
+        // and 2) I'm not creating a new array with spread.
+        setAllBooks((allBooks) => [...allBooks, book]);
     }
 
     return (
@@ -43,7 +65,7 @@ function Main() {
                 {myBooksBtnIsActive && <Button>My Books</Button>}
             </div>
             {myBooksColumn && <MyBooks />}
-            {formIsActive && <Form />}
+            {formIsActive && <Form onAddBook={handleAddNewBook} />}
         </div>
     );
 }
@@ -57,23 +79,34 @@ function Quote() {
     );
 }
 
-function Button({ onClick, children }) {
-    return <button onClick={onClick}>{children}</button>;
-}
-
-function Form() {
+function Form({ onAddBook }) {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [genre, setGenre] = useState("");
     const [pagesNumber, setPagesNumber] = useState(0);
     const [synopsis, setSynopsis] = useState("");
-    const [cover, setCover] = useState(null);
+    const [cover, setCover] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        const newBook = {
+            title,
+            author,
+            genre,
+            pagesNumber,
+            synopsis,
+            cover,
+        };
+
+        onAddBook(newBook);
+    }
 
     return (
         <div className="add-book-section">
             <h2 className="title">My new book:</h2>
 
-            <form className="add-book-form">
+            <form className="add-book-form" onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>
                 <input
                     type="text"
@@ -138,8 +171,8 @@ function Form() {
     );
 }
 
-function MyBooks() {
-    return <div className="my-books"></div>;
+function MyBooks({ allBooks }) {
+    return <div className="my-books">{allBooks}</div>;
 }
 
 export default App;
