@@ -181,9 +181,13 @@ textarea:focus {
     margin: 0;
     margin-bottom: 0.4rem;
     font-family: "Brygada 1918";
-    font-weight: 500;
+}
+
+.book-title {
+    font-weight: 700;
 }
 
 .book-author {
+    font-weight: 400;
     font-style: italic;
 }

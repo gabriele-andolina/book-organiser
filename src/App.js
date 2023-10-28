@@ -194,7 +194,7 @@ function BookItem({ title, author }) {
                 ></img>
             </div>
             <div className="book-info">
-                <p>{title}</p>
+                <p className="book-title">{title}</p>
                 <p className="book-author">{author}</p>
             </div>
         </div>
