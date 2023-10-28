@@ -64,7 +64,7 @@ function Main() {
                 )}
                 {myBooksBtnIsActive && <Button>My Books</Button>}
             </div>
-            {myBooksColumn && <MyBooks />}
+            {myBooksColumn && <MyBooks allBooks={allBooks} />}
             {formIsActive && <Form onAddBook={handleAddNewBook} />}
         </div>
     );
@@ -172,7 +172,24 @@ function Form({ onAddBook }) {
 }
 
 function MyBooks({ allBooks }) {
-    return <div className="my-books">{allBooks}</div>;
+    return (
+        <div className="my-books">
+            <ul>
+                {allBooks.map((book) => (
+                    <BookItem title={book.title} author={book.author} />
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+function BookItem({ title, author }) {
+    return (
+        <div className="book-item">
+            <p>{title}</p>
+            <p>{author}</p>
+        </div>
+    );
 }
 
 export default App;
