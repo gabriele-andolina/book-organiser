@@ -56,7 +56,7 @@ function Main() {
     return (
         <div className="main-page">
             {quoteIsActive && <Quote />}
-            <div className="main-page-btns">
+            <div className="main-page-buttons">
                 {addBooksBtnIsActive && (
                     <Button onClick={handleAddBooks}>Add a book</Button>
                 )}
