@@ -12,9 +12,10 @@ function Form({ onAddBook }) {
     function handleSubmit(e) {
         e.preventDefault();
 
-        console.log("Working");
+        const id = crypto.randomUUID();
 
         const newBook = {
+            id,
             title,
             author,
             genre,
