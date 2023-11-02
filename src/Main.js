@@ -3,6 +3,7 @@ import Button from "./Button";
 import Quote from "./Quote";
 import MyBooks from "./MyBooks";
 import Form from "./Form";
+import BookDetails from "./BookDetails";
 
 const books = [
     {
@@ -46,12 +47,13 @@ function Main() {
     return (
         <div className="main-page">
             {quoteIsActive && <Quote />}
-            <div className="main-page-buttons">
+            <div className="page-buttons">
                 {addBooksBtnIsActive && (
                     <Button onClick={handleAddBooks}>Add a book</Button>
                 )}
                 {myBooksBtnIsActive && <Button>My Books</Button>}
             </div>
+
             {myBooksColumn && (
                 <MyBooks
                     allBooks={allBooks}
@@ -59,7 +61,10 @@ function Main() {
                     onSelectBook={handleSelectBook}
                 />
             )}
+
             {formIsActive && <Form onAddBook={handleAddNewBook} />}
+
+            {selectedBook && <BookDetails selectedBook={selectedBook} />}
         </div>
     );
 }

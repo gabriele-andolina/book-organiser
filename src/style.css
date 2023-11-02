@@ -4,13 +4,13 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    font-family: "Brygada 1918", "Times New Roman", sans-serif;
 }
 
 .page-title {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Brygada 1918", "Times New Roman", sans-serif;
     font-size: 1.5rem;
     font-style: italic;
     background-color: #a2c579;
@@ -65,10 +65,10 @@ button:hover {
     color: #a2c579;
 }
 
-.main-page-buttons {
+.page-buttons {
     display: flex;
-    justify-content: space-between;
-    width: 25vw;
+    justify-content: space-around;
+    width: 22rem;
 }
 
 .add-book-section {
@@ -160,7 +160,7 @@ textarea:focus {
     padding-left: 0.4rem;
 }
 
-.book-cover-div {
+.book-cover-div-small {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,7 +170,7 @@ textarea:focus {
     box-sizing: border-box;
 }
 
-.book-cover {
+.book-cover-small {
     height: 50%;
 }
 
@@ -194,4 +194,26 @@ textarea:focus {
 .book-author {
     font-weight: 400;
     font-style: italic;
+}
+
+.book-details-section {
+    margin-top: 4rem;
+    position: relative;
+    left: 10%;
+}
+
+.book-cover-div {
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    margin-bottom: 3rem;
+}
+
+.book-info-spec {
+    font-weight: 700;
+}
+
+.book-actions-div {
+    display: flex;
+    justify-content: space-around;
 }
