@@ -6,6 +6,7 @@ import Form from "./Form";
 
 const books = [
     {
+        id: 1,
         title: "Harry Potter and the Philosopher's Stone",
         author: "J. K. Rowling",
         genre: "Fantasy",
@@ -22,6 +23,7 @@ function Main() {
     const [formIsActive, setFormIsActive] = useState(false);
     const [myBooksColumn, setMyBooksColumn] = useState(false);
     const [allBooks, setAllBooks] = useState(books);
+    const [selectedBook, setSelectedBook] = useState(null);
 
     function handleAddBooks() {
         setQuoteIsActive(false);
@@ -35,6 +37,12 @@ function Main() {
         setAllBooks((allBooks) => [...allBooks, book]);
     }
 
+    function handleSelectBook(book) {
+        setFormIsActive(false);
+        setSelectedBook(book);
+        console.log(book);
+    }
+
     return (
         <div className="main-page">
             {quoteIsActive && <Quote />}
@@ -44,7 +52,13 @@ function Main() {
                 )}
                 {myBooksBtnIsActive && <Button>My Books</Button>}
             </div>
-            {myBooksColumn && <MyBooks allBooks={allBooks} />}
+            {myBooksColumn && (
+                <MyBooks
+                    allBooks={allBooks}
+                    selectedBook={selectedBook}
+                    onSelectBook={handleSelectBook}
+                />
+            )}
             {formIsActive && <Form onAddBook={handleAddNewBook} />}
         </div>
     );
