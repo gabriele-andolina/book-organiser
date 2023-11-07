@@ -42,6 +42,7 @@ function Main() {
         setFormIsActive(false);
         setSelectedBook(book);
         console.log(book);
+        console.log("Hey, this is book ID:", book.id);
     }
 
     return (

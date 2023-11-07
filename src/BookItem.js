@@ -1,6 +1,6 @@
-function BookItem({ title, author }) {
+function BookItem({ title, author, book, selectedBook }) {
     return (
-        <div className="book-item">
+        <div className={book === selectedBook ? "selected" : "book-item"}>
             <div className="book-cover-div-small">
                 <img
                     src="images/books-stack.png"

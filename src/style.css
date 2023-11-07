@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100vw;
     font-family: "Brygada 1918", "Times New Roman", sans-serif;
 }
 
@@ -36,7 +37,7 @@ body {
     font-family: "Tangerine", "Times New Roman", sans-serif;
     font-size: 2.5rem;
     /* font-weight: 800; */
-    color: #61a3ba;
+    color: #4f6f52;
 }
 
 .quote {
@@ -53,7 +54,7 @@ button {
     width: 10rem;
     height: 3rem;
     padding: 1rem;
-    border: 2px solid #d2de32;
+    border: 2px solid #739072;
     border-radius: 10px;
     font-family: "Brygada 1918";
     font-weight: 700;
@@ -91,14 +92,14 @@ button:hover {
     margin-top: 2rem;
     margin-bottom: 0.6rem;
     font-family: "Tangerine", "Times New Roman", sans-serif;
-    color: #61a3ba;
+    color: #4f6f52;
     font-size: 3rem;
 }
 
 label {
     font-family: "Brygada 1918";
     font-size: 0.8rem;
-    color: #61a3ba;
+    color: #4f6f52;
     margin-bottom: 0.4rem;
 }
 
@@ -108,10 +109,10 @@ input[type="file"] {
     width: 20rem;
     height: 2rem;
     margin-bottom: 1rem;
-    color: #61a3ba;
+    color: #4f6f52;
     font-family: "Brygada 1918";
     font-weight: 500;
-    border: 2px solid #d2de32;
+    border: 2px solid #739072;
     border-radius: 10px;
     padding: 0.5rem;
 }
@@ -138,11 +139,13 @@ textarea:focus {
     left: 0px;
     width: 30vw;
     height: 110vh;
-    background-color: #61a3ba;
+    background-color: #739072;
 }
 
 .my-books li {
     margin-bottom: 6rem;
+    list-style-type: none;
+    margin-bottom: 7rem;
 }
 
 .book-item {
@@ -156,7 +159,7 @@ textarea:focus {
     height: 6rem;
     width: 28vw;
     background-color: #ffffdd;
-    border: 3px solid #d2de32;
+    border: 2.5px solid #4f6f52;
     padding-left: 0.4rem;
 }
 
@@ -185,6 +188,22 @@ textarea:focus {
     margin: 0;
     margin-bottom: 0.4rem;
     font-family: "Brygada 1918";
+    color: #3a4d39;
+}
+
+.selected {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0.5vw;
+    height: 6.5rem;
+    width: 29vw;
+    background-color: #a2c579;
+    border: 2.5px solid #ffffdd;
+    padding-left: 0.4rem;
 }
 
 .book-title {
@@ -211,6 +230,7 @@ textarea:focus {
 
 .book-info-spec {
     font-weight: 700;
+    color: #3a4d39;
 }
 
 .book-actions-div {
