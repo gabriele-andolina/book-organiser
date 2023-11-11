@@ -1,7 +1,17 @@
+import { useState } from "react";
 import Button from "./Button";
+import UpdateForm from "./UpdateForm";
 
 function BookDetails({ selectedBook }) {
-    return (
+    const [bookDetailsIsActive, setBookDetailsIsActive] = useState(true);
+    const [updateMode, setUpdateMode] = useState(false);
+
+    function handleBookUpdate() {
+        setBookDetailsIsActive(false);
+        setUpdateMode(true);
+    }
+
+    return bookDetailsIsActive ? (
         <div className="book-details-section">
             <div className="book-cover-div">
                 <img
@@ -34,10 +44,16 @@ function BookDetails({ selectedBook }) {
                 {selectedBook.synopsis}
             </p>
             <div className="book-actions-div">
-                <Button>Update</Button>
+                <Button onClick={handleBookUpdate}>Update</Button>
                 <Button>Delete</Button>
             </div>
         </div>
+    ) : (
+        <UpdateForm
+            selectedBook={selectedBook}
+            updateMode={updateMode}
+            onUpdateBook={handleBookUpdate}
+        />
     );
 }
 

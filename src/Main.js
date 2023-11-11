@@ -25,6 +25,13 @@ function Main() {
     const [myBooksColumn, setMyBooksColumn] = useState(false);
     const [allBooks, setAllBooks] = useState(books);
     const [selectedBook, setSelectedBook] = useState(null);
+    // Form variables
+    const [title, setTitle] = useState("");
+    const [author, setAuthor] = useState("");
+    const [genre, setGenre] = useState("");
+    const [pagesNumber, setPagesNumber] = useState(0);
+    const [synopsis, setSynopsis] = useState("");
+    const [cover, setCover] = useState("");
 
     function handleAddBooks() {
         setQuoteIsActive(false);
@@ -45,6 +52,38 @@ function Main() {
         console.log("Hey, this is book ID:", book.id);
     }
 
+    function handleUpdateBook(selectedBook) {
+        // setSelectedBook(null);
+        setFormIsActive(true);
+    }
+
+    // Form submission
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        const id = crypto.randomUUID();
+
+        const newBook = {
+            id,
+            title,
+            author,
+            genre,
+            pagesNumber,
+            synopsis,
+            cover,
+        };
+
+        handleAddNewBook(newBook);
+        console.log(newBook);
+
+        setTitle("");
+        setAuthor("");
+        setGenre("");
+        setPagesNumber(0);
+        setSynopsis("");
+        setCover("");
+    }
+
     return (
         <div className="main-page">
             {quoteIsActive && <Quote />}
@@ -63,9 +102,46 @@ function Main() {
                 />
             )}
 
-            {formIsActive && <Form onAddBook={handleAddNewBook} />}
+            {formIsActive && (
+                <Form
+                    title={title}
+                    onSetTitle={setTitle}
+                    author={author}
+                    onSetAuthor={setAuthor}
+                    genre={genre}
+                    onSetGenre={setGenre}
+                    pagesNumber={pagesNumber}
+                    onSetPagesNumber={setPagesNumber}
+                    synopsis={synopsis}
+                    onSetSynopsis={setSynopsis}
+                    cover={cover}
+                    onSetCover={setCover}
+                    onAddBook={handleAddNewBook}
+                    onSubmit={handleSubmit}
+                />
+            )}
 
-            {selectedBook && <BookDetails selectedBook={selectedBook} />}
+            {selectedBook && (
+                <BookDetails
+                    selectedBook={selectedBook}
+                    setSelectedBook={setSelectedBook}
+                    onUpdateBook={handleUpdateBook}
+                    title={title}
+                    onSetTitle={setTitle}
+                    author={author}
+                    onSetAuthor={setAuthor}
+                    genre={genre}
+                    onSetGenre={setGenre}
+                    pagesNumber={pagesNumber}
+                    onSetPagesNumber={setPagesNumber}
+                    synopsis={synopsis}
+                    onSetSynopsis={setSynopsis}
+                    cover={cover}
+                    onSetCover={setCover}
+                    onAddBook={handleAddNewBook}
+                    onSubmit={handleSubmit}
+                />
+            )}
         </div>
     );
 }

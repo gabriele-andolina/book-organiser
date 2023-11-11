@@ -14,7 +14,8 @@ body {
     align-items: center;
     font-size: 1.5rem;
     font-style: italic;
-    background-color: #a2c579;
+    /* background-color: #a2c579; */
+    background-color: #4f6f52;
     color: #ffffdd;
     width: 100vw;
 }
@@ -37,7 +38,7 @@ body {
     font-family: "Tangerine", "Times New Roman", sans-serif;
     font-size: 2.5rem;
     /* font-weight: 800; */
-    color: #4f6f52;
+    color: #3a4d39;
 }
 
 .quote {
@@ -49,7 +50,7 @@ body {
 }
 
 button {
-    background-color: #a2c579;
+    background-color: #739072;
     color: #ffffdd;
     width: 10rem;
     height: 3rem;
@@ -63,7 +64,7 @@ button {
 
 button:hover {
     background-color: #ffffdd;
-    color: #a2c579;
+    color: #739072;
 }
 
 .page-buttons {
@@ -92,14 +93,14 @@ button:hover {
     margin-top: 2rem;
     margin-bottom: 0.6rem;
     font-family: "Tangerine", "Times New Roman", sans-serif;
-    color: #4f6f52;
+    color: #3a4d39;
     font-size: 3rem;
 }
 
 label {
     font-family: "Brygada 1918";
     font-size: 0.8rem;
-    color: #4f6f52;
+    color: #3a4d39;
     margin-bottom: 0.4rem;
 }
 
@@ -109,7 +110,7 @@ input[type="file"] {
     width: 20rem;
     height: 2rem;
     margin-bottom: 1rem;
-    color: #4f6f52;
+    color: #3a4d39;
     font-family: "Brygada 1918";
     font-weight: 500;
     border: 2px solid #739072;
@@ -123,7 +124,6 @@ textarea {
 
 input:focus,
 textarea:focus {
-    /* border: 2px solid #d2de32; */
     width: 21rem;
     height: 3rem;
 }
@@ -159,7 +159,7 @@ textarea:focus {
     height: 6rem;
     width: 28vw;
     background-color: #ffffdd;
-    border: 2.5px solid #4f6f52;
+    border: 3px solid #4f6f52;
     padding-left: 0.4rem;
 }
 
@@ -201,7 +201,7 @@ textarea:focus {
     right: 0.5vw;
     height: 6.5rem;
     width: 29vw;
-    background-color: #a2c579;
+    background-color: #ddf2fd;
     border: 2.5px solid #ffffdd;
     padding-left: 0.4rem;
 }
